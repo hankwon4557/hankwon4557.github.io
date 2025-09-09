@@ -7,6 +7,7 @@
         .header {
             display: flex;
             align-items: center;
+            justift-content: space-between; /*로고 사이 양끝으로 정렬 */
             gap: 20px;
         }
         .logo {
@@ -15,20 +16,18 @@
         }
         ul {
             display: flex; /* 메뉴 가로정렬 */
-            gap: 20px;       /* 메뉴 갭 */
+            gap: 40px;       /* 메뉴 갭 */
             list-style: none; /* 메뉴 점 없애기 */
         }
         li {
-            color: #333; /* 글자 색상 진회색 */
-            font-size: 16px; /* 글자크기 16픽셀 */
             font-weight: bold; /* 글자를 굵게 만듭니다. */
         }
         a {
             text-decoration: none; /*링크 밑줄 없애기. */
-            color: inherit; /* 링크 글자색을 부모태그(li) 와 동일하게 */
+            color: #555;
         }
         a:hover {
-            color: #007bff; /* 마우스를 올리면 파란색으로 */
+            color: #000
         }
     </style>
 </head>
