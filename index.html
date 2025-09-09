@@ -5,21 +5,32 @@
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
     <style>
         .header {
-            display: flex; /* 상자 안의 내용물을 가로로 정렬해줍니다. */
-            align-items: center; /* 로고와 제목을 세로 방향의 중앙에 맞춰줍니다. */
-            gap: 20px; /* 요소들 사이에 20픽셀 간격추가 */
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
-        .logo {width: 150px ;
-               height: auto;
-              }
+        .logo {
+            width: 150px;
+            height: auto;
+        }
+        ul {
+            list-stlye: none; /* 메뉴 점 없애기 */
     </style>
 </head>
 <body>
     <header>
         <div class="header">
-        <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
-        <h1>안녕하세요! 오조 건축사사무소입니다.</h1>
-    </div>
+            <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
+            <h1>안녕하세요! 오조 건축사사무소입니다.</h1>
+            <nav>
+                <ul>
+                    <li>ABOUT</li>
+                    <li>WORK</li>
+                    <li>NEWS</li>
+                    <li>CONTECT</li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -27,7 +38,7 @@
     </main>
 
     <footer>
-        <p>copyright © 2025 오조 건축사사무소. All Rights Reserved. </p>
+        <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
