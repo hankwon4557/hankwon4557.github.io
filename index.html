@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
     <style>
-        .header {
+       
+        ul {
+            display: flex; /* 메뉴 가로정렬 */
+            gap: 50px;       /* 메뉴 갭 */
+            list-style: none; /* 메뉴 점 없애기 */
+        }
+        li {
+            font-weight: bold; /* 글자를 굵게 만듭니다. */
+        }
+        a {
+            text-decoration: none; /*링크 밑줄 없애기. */
+            color: #555;
+            font-size: 24px; /* 메뉴 글자 크기 */
+        }
+        a:hover {
+            color: #000;
+        }
+       .header {
             display: flex;
             align-items: center;
             justify-content: space-between; /*로고 사이 양끝으로 정렬 */
@@ -26,35 +43,19 @@
             width: 25px;
             height: 3px;
             margin: 5px 0;
+            background-color: #333;
         }
 
         /* 모바일 화면 스타일 */
         @media (max-width: 768px) {
             .hamburger-menu {
-                dsiplay: block;
+                display: block;
                 cursor: pointer;
             }
             nav {
                 display: none;
             }
         }
-        ul {
-            display: flex; /* 메뉴 가로정렬 */
-            gap: 50px;       /* 메뉴 갭 */
-            list-style: none; /* 메뉴 점 없애기 */
-        }
-        li {
-            font-weight: bold; /* 글자를 굵게 만듭니다. */
-        }
-        a {
-            text-decoration: none; /*링크 밑줄 없애기. */
-            color: #555;
-            font-size: 24px; /* 메뉴 글자 크기 */
-        }
-        a:hover {
-            color: #000;
-        }
-      
     </style>
 </head>
 <body>
