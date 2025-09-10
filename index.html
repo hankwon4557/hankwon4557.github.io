@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
   
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> /* 모바일창 사이즈 조절하는거 */
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <style>
        
@@ -19,7 +19,7 @@
         a {
             text-decoration: none; /*링크 밑줄 없애기. */
             color: #555;
-            font-size: 25px; /* 메뉴 글자 크기 */
+            font-size: 18px; /* 메뉴 글자 크기 */
         }
         a:hover {
             color: #000;
@@ -39,13 +39,21 @@
             padding: 0 20px; /* 좌우에 20px 여백 추가 */
             background-color: #f0f0f0; /* 임시배경 */
         }
-    /* 3. 미디어 쿼리 (모바일 화면) */
+        /* 3. 미디어 쿼리 (모바일 화면) */
         @media (max-width: 768px) {
             .header {
-                flex-direction: column; /* 헤더의 정렬을 세로로 변경 */
+                flex-wrap: wrap;
             }
             .logo {
-                margin-bottom: 20px; /* 로고와 메뉴 사이 간격 추가 */
+                margin-right: auto;
+                margin-left: 0;
+            }
+            nav {
+                width: 100%;
+                margin-top: 20px;
+            }
+            ul {
+                justify-content: center;
             }
         }
     </style>
