@@ -19,6 +19,25 @@
             padding: 0 20px; /* 좌우에 20px 여백 추가 */
             background-color: #f0f0f0; /* 임시배경 */
         }
+        .hamburger-menu {
+            display: none;
+        }
+        .bar {
+            width: 25px;
+            height: 3px;
+            margin: 5px 0;
+        }
+
+        /* 모바일 화면 스타일 */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                dsiplay: block;
+                cursor: pointer;
+            }
+            nav {
+                display: none;
+            }
+        }
         ul {
             display: flex; /* 메뉴 가로정렬 */
             gap: 50px;       /* 메뉴 갭 */
