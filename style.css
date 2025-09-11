@@ -60,6 +60,19 @@
         height: 100%;
         object-fit: cover;
     }
+
+/* office 페이지 스타일 */
+main p {
+    font-size: 24;
+    text-align: center;
+    margin-top: 50px
+}
+
+.highlight {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+}
     
     /* 모바일 스타일 (화면이 768px 이하일 때만 적용) */
     @media (max-width: 768px) {
@@ -91,4 +104,5 @@
         .brand-group {
             margin-bottom: 20px;
         }
+    
     }
