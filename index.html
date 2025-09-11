@@ -36,23 +36,22 @@
             padding: 0 20px;
             background-color: #f0f0f0;
         }
-        /* 3. 미디어 쿼리 (모바일 화면) */
-        @media (max-width: 768px) {
-            .header {
-                flex-wrap: wrap;
-            }
-            .logo {
-                margin-right: auto;
-                margin-left: 0;
-            }
-            nav {
-                width: 100%;
-                margin-top: 16px;
-            }
-            ul {
-                justify-content: center;
-            }
-        }
+        /* 3. 미디어 쿼리 (모바일 화면) */
+        @media (max-width: 768px) {
+            .header {
+                flex-wrap: wrap;
+            }
+            .logo {
+                margin-right: auto;
+                margin-left: 0;
+            }
+            nav {
+                width: 100%;
+                margin-top: 16px;
+                display: flex; /* nav를 flex 컨테이너로 설정 */
+                justify-content: center; /* nav 내부를 가운데 정렬 */
+            }
+        }
     </style>
 </head>
 <body>
