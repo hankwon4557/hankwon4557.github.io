@@ -3,67 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* -------------------- PC 화면용 기본 스타일 -------------------- */
-        
-        /* 메뉴 항목 컨테이너 설정 */
+        /* 1. HTML 태그 스타일 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
         ul {
-            display: flex; /* 메뉴 항목들을 가로로 정렬 */
-            gap: 25px;    /* 메뉴 항목 사이의 간격 설정 */
-            list-style: none; /* 리스트 앞에 붙는 점(bullet) 제거 */
+            display: flex;
+            gap: 20px; /* 메뉴 간격을 20px로 수정 */
+            list-style: none;
         }
-       
-        /* 링크(메뉴) 스타일 */
         a {
-            text-decoration: none; /* 링크 밑줄 제거 */
-            color: #555; /* 링크 글자색 설정 */
-            font-size: 16px; /* 메뉴 글자 크기 */
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
         }
-        /* 마우스를 올렸을 때 링크 색상 변경 */
         a:hover {
             color: #000;
         }
-       
-        /* 헤더 섹션 스타일 */
+        
+        /* 2. 클래스 스타일 */
         .header {
-            display: flex; /* 로고와 메뉴를 가로로 정렬 */
-            align-items: center; /* 세로축 가운데 정렬 */
-            justify-content: space-between; /* 로고와 메뉴를 양 끝으로 정렬 */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        /* 로고 이미지 스타일 */
         .logo {
             width: 100px;
             height: auto;
         }
-        /* 페이지 전체 컨테이너 스타일 */
         .container {
-            max-width: 1200px; /* 최대 너비 설정 */
-            margin: 0 auto; /* 페이지를 중앙에 배치 */
-            padding: 0 20px; /* 좌우 여백 추가 */
-            background-color: #f0f0f0; /* 임시 배경색 */
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f0f0f0;
         }
-       
-        /* -------------------- 모바일 화면용 스타일 (768px 이하) -------------------- */
+        
+        /* 3. 미디어 쿼리 (모바일 화면) */
         @media (max-width: 768px) {
             .header {
-                flex-wrap: wrap; /* 공간이 부족할 때 다음 줄로 넘어가도록 설정 */
+                flex-wrap: wrap;
             }
-            /* 로고를 왼쪽으로 고정 */
             .logo {
                 margin-right: auto;
                 margin-left: 0;
             }
-            /* 네비게이션을 한 줄 전체에 배치 */
             nav {
                 width: 100%;
                 margin-top: 15px;
             }
-            /* 메뉴 항목들을 가운데 정렬 */
             ul {
                 justify-content: center;
+                flex-wrap: wrap; /* 메뉴가 한 줄에 다 안 들어갈 경우 다음 줄로 넘어가도록 설정 */
             }
         }
     </style>
