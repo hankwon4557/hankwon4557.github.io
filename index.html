@@ -3,53 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
-  
+  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    
     <style>
-       
-        ul {
-            display: flex; /* 메뉴 가로정렬 */
-            gap: 25px;       /* 메뉴 갭 */
-            list-style: none; /* 메뉴 점 없애기 */
-        }
+        /* -------------------- PC 화면용 기본 스타일 -------------------- */
         
+        /* 메뉴 항목 컨테이너 설정 */
+        ul {
+            display: flex; /* 메뉴 항목들을 가로로 정렬 */
+            gap: 250px;    /* 메뉴 항목 사이의 간격 설정 */
+            list-style: none; /* 리스트 앞에 붙는 점(bullet) 제거 */
+        }
+       
+        /* 링크(메뉴) 스타일 */
         a {
-            text-decoration: none; /*링크 밑줄 없애기. */
-            color: #555;
+            text-decoration: none; /* 링크 밑줄 제거 */
+            color: #555; /* 링크 글자색 설정 */
             font-size: 16px; /* 메뉴 글자 크기 */
         }
+        /* 마우스를 올렸을 때 링크 색상 변경 */
         a:hover {
             color: #000;
         }
-       .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between; /*로고 사이 양끝으로 정렬 */
+       
+        /* 헤더 섹션 스타일 */
+        .header {
+            display: flex; /* 로고와 메뉴를 가로로 정렬 */
+            align-items: center; /* 세로축 가운데 정렬 */
+            justify-content: space-between; /* 로고와 메뉴를 양 끝으로 정렬 */
         }
+        /* 로고 이미지 스타일 */
         .logo {
             width: 100px;
             height: auto;
         }
+        /* 페이지 전체 컨테이너 스타일 */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px; /* 좌우에 20px 여백 추가 */
-            background-color: #f0f0f0; /* 임시배경 */
+            max-width: 1200px; /* 최대 너비 설정 */
+            margin: 0 auto; /* 페이지를 중앙에 배치 */
+            padding: 0 20px; /* 좌우 여백 추가 */
+            background-color: #f0f0f0; /* 임시 배경색 */
         }
-        /* 3. 미디어 쿼리 (모바일 화면) */
+       
+        /* -------------------- 모바일 화면용 스타일 (768px 이하) -------------------- */
         @media (max-width: 768px) {
             .header {
-                flex-wrap: wrap;
+                flex-wrap: wrap; /* 공간이 부족할 때 다음 줄로 넘어가도록 설정 */
             }
+            /* 로고를 왼쪽으로 고정 */
             .logo {
                 margin-right: auto;
                 margin-left: 0;
             }
+            /* 네비게이션을 한 줄 전체에 배치 */
             nav {
                 width: 100%;
                 margin-top: 15px;
             }
+            /* 메뉴 항목들을 가운데 정렬 */
             ul {
                 justify-content: center;
             }
@@ -58,28 +70,28 @@
 </head>
 <body>
     <div class="container">
-    <header>
-        <div class="header">
-            <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#">Office</a></li>
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">News</a></li>
-                </ul>
-            </nav>
-        </div>
-        <h1>제주 건축사사무소 | 오조 건축사사무소</h1>
-    </header>
+        <header>
+            <div class="header">
+                <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="#">Office</a></li>
+                        <li><a href="#">Project</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1>제주 건축사사무소 | 오조 건축사사무소</h1>
+        </header>
 
-    <main>
-        <h2>제주에 위치한 오조 건축사사무소 는 아름다운 사람들이 아름다운 곳에 머물길 바라면서 공간을 설계하고 있습니다.</h2>
-        <p>당신을 비추는 건축 오조 건축사사무소</p>
-    </main>
+        <main>
+            <h2>제주에 위치한 오조 건축사사무소는 아름다운 사람들이 아름다운 곳에 머물길 바라면서 공간을 설계하고 있습니다.</h2>
+            <p>당신을 비추는 건축 오조 건축사사무소</p>
+        </main>
 
-    <footer>
-        <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
-    </footer>
+        <footer>
+            <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
+        </footer>
     </div>
 </body>
 </html>
