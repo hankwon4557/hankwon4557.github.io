@@ -3,82 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오조 건축사사무소</title>
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    
     <style>
-        ul {
-            display: flex;
-            gap: 20px; /* 메뉴 간격을 20px로 수정 */
-            list-style: none;
-        }
-        
-        a {
-            text-decoration: none;
-            color: #555;
-            font-size: 16px;
-        }
-        a:hover {
-            color: #000;
-        }
-       .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .logo {
-            width: 100px;
-            height: auto;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            background-color: #f0f0f0;
-        }
+        ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+        }
+        a:hover {
+            color: #000;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            background-color: #f0f0f0;
+        }
+        
         /* 3. 미디어 쿼리 (모바일 화면) */
         @media (max-width: 768px) {
             .header {
                 flex-wrap: wrap;
             }
             .logo {
-               width: 100px; /* 모바일 로고사이즈 */
+                width: 100px; /* 모바일에서도 로고 크기를 100px로 고정 */
                 margin-right: auto;
                 margin-left: 0;
             }
             nav {
                 width: 100%;
                 margin-top: 16px;
-                display: flex; /* nav를 flex 컨테이너로 설정 */
-                justify-content: center; /* nav 내부를 가운데 정렬 */
+                display: flex;
+                justify-content: center;
+            }
+            ul {
+                 /* ul의 정렬 속성은 nav가 담당하므로 여기서는 제거 */
             }
         }
-    </style>
+    </style>
 </head>
 <body>
-    <div class="container">
-    <header>
-        <div class="header">
-            <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="#">Office</a></li>
-                    <li><a href="#">Project</a></li>
-                    <li><a href="#">News</a></li>
-                </ul>
-            </nav>
-        </div>
-        <h1>제주 건축사사무소 | 오조 건축사사무소</h1>
-    </header>
+    <div class="container">
+        <header>
+            <div class="header">
+                <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
+                <nav>
+                    <ul>
+                        <li><a href="#">Office</a></li>
+                        <li><a href="#">Project</a></li>
+                        <li><a href="#">News</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <h1>제주 건축사사무소 | 오조 건축사사무소</h1>
+        </header>
 
-    <main>
-        <h2>제주에 위치한 오조 건축사사무소 는 아름다운 사람들이 아름다운 곳에 머물길 바라면서 공간을 설계하고 있습니다.</h2>
-        <p>당신을 비추는 건축 오조 건축사사무소</p>
-    </main>
+        <main>
+            <h2>제주에 위치한 오조 건축사사무소는 아름다운 사람들이 아름다운 곳에 머물길 바라면서 공간을 설계하고 있습니다.</h2>
+            <p>당신을 비추는 건축 오조 건축사사무소</p>
+        </main>
 
-    <footer>
-        <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
-    </footer>
-    </div>
+        <footer>
+            <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
