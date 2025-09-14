@@ -4,32 +4,29 @@
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오피스</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <div class="brand-group">
-                <img src="logo.jpg" alt="오조 건축사사무소 로고" class="logo">
-                <h1>제주 건축사사무소 | 오조 건축사사무소</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="office.html">Office</a></li>
-                    <li><a href="index.html">Project</a></li> <!-- 변경된 부분 -->
-                    <li><a href="#">News</a></li>
-                </ul>
-            </nav>
-        </header>
-    
+        <header id="site-header"></header>
         <main>
-              <p>당신을 비추는 건축 <a href="https://naver.me/52RBHDK2" target="_blank" class="highlight">오조 건축사사무소</a> 입니다.</p>
-            </main>
-        
-        <footer>
-            <p>copyright © 2025 오조 건축사사무소. All Rights Reserved.</p>
-        </footer>
+            <p>당신을 비추는 건축 <a href="https://naver.me/52RBHDK2" target="_blank" class="highlight">오조 건축사사무소</a> 입니다.</p>
+        </main>
+        <footer id="site-footer"></footer>
     </div>
+    <script>
+        // 헤더 불러오기
+        fetch('header.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('site-header').innerHTML = data;
+            });
+        // 푸터 불러오기
+        fetch('footer.html')
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById('site-footer').innerHTML = data;
+            });
+    </script>
 </body>
 </html>
