@@ -1,0 +1,54 @@
+/* ========================================
+   프로젝트 페이지 스타일 (Project Page Styles)
+   ======================================== */
+
+/* 프로젝트 갤러리 스타일 */
+.project-gallery {
+    display: flex; /* 갤러리 가로 배치 */
+    flex-wrap: wrap; /* 줄 바꿈 허용 */
+    gap: 2vw; /* 갤러리 아이템 간격 */
+}
+
+.project-item {
+    flex-basis: calc((100% - 4vw) / 3); /* 아이템 너비 계산 */
+    aspect-ratio: 1; /* 정사각형 비율 강제 */
+    display: flex; /* flexbox 적용 */
+    flex-direction: column; /* 세로 배치 */
+}
+
+.project-item a {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item img {
+    width: 100%; /* 이미지 너비 100% */
+    flex: 1; /* 이미지가 남은 공간 차지 */
+    object-fit: cover; /* 이미지 비율 유지하며 영역 채우기 */
+}
+
+/* 프로젝트 제목 스타일 */
+.project-title {
+    font-size: 13px; /* 글자 크기 14pt */
+    color: #666; /* 색상 */
+    text-align: center; /* 가운데 정렬 */
+    margin-top: 10px; /* 이미지와 제목 간격 */
+    margin-bottom: 0; /* 기본 여백 제거 */
+    font-weight: normal; /* 기본 두께 */
+}
+
+/* 프로젝트 페이지 반응형 */
+@media (max-width: 768px) {
+    .project-gallery {
+        gap: 20px; /* 갤러리 아이템 간격 조정 */
+        justify-content: space-between; /* 갤러리 아이템 간격 조정 */
+    }
+    
+    .project-item {
+        flex-basis: calc(50% - 10px); /* 모바일에서 아이템 너비 조정 */
+        aspect-ratio: 1; /* 모바일에서도 정사각형 유지 */
+    }
+}

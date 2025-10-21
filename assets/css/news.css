@@ -1,0 +1,77 @@
+/* ========================================
+   뉴스 페이지 스타일 (News Page Styles)
+   ======================================== */
+
+/* 뉴스 리스트 컨테이너 */
+.news-list {
+    display: flex; /* flex 컨테이너로 설정 */
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center; /* 가로 중앙 정렬 */
+    gap: 0; /* 뉴스 카드 간격 제거 (점선으로 구분하므로) */
+}
+
+/* 뉴스 포스트 카드 */
+.news-post {
+    display: flex; /* 뉴스 카드 가로 배치 */
+    align-items: flex-start; /* 뉴스 카드 아이템 세로 정렬 */
+    max-width: 800px; /* 최대 너비 제한 */
+    width: 100%; /* 너비 100% (중앙정렬을 위해) */
+    margin-bottom: 0; /* 카드 간 간격 제거 */
+    padding: 15px 0; /* 위아래 여백 추가 */
+    border-bottom: 1px solid #ccc; /* 점선 구분선 */
+}
+
+/* 마지막 뉴스 포스트에는 점선 제거 */
+.news-post:last-child {
+    border-bottom: none;
+}
+
+/* 뉴스 썸네일 이미지 */
+.news-thumb {
+    width: 150px; /* 썸네일 크기 */
+    height: 150px; /* 썸네일 크기 */
+    margin-right: 15px; /* 썸네일과 텍스트 간격 */
+    object-fit: cover; /* 이미지 비율 유지 */
+    align-self: center; /* 썸네일만 개별적으로 중앙 정렬 */
+}
+
+/* 뉴스 정보 컨테이너 */
+.news-info {
+    padding: 0; /* 기존 여백 제거 */
+    display: flex; /* 세로 배치를 위한 flex */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    flex: 1; /* 남은 공간 모두 차지 */
+}
+
+/* 뉴스 메타 정보 (날짜) */
+.news-meta {
+    font-size: 14px; /* 폰트 크기 */
+    margin-bottom: 6px; /* 날짜 아래 여백 */
+    margin-left: 1px; /* 왼쪽에 한 칸 여백 추가 */  
+    color: #888; /* 색상 조정 */
+}
+
+/* 뉴스 제목 */
+.news-headline {
+    font-size: 15px; /* 타이틀 폰트 크기 */
+    margin: 0 0 6px 0; /* 제목 아래 여백 */
+    font-weight: 600; /* 제목 두껍게 */
+    color: #333; /* 색상 조정 */
+}
+
+/* 뉴스 본문 */
+.news-content {
+    font-size: 14px; /* 본문 폰트 크기 */
+    margin: 0; /* 기본 여백 제거 */
+    color: #666; /* 색상 조정 */
+    line-height: 1.4; /* 줄간격 조정 */
+    
+    /* 항상 3줄 높이를 유지 */
+    height: calc(1.4em * 3); /* 3줄 높이 고정 (line-height * 3) */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 3줄로 제한 */
+    line-clamp: 3; /* 표준 속성 추가 */
+    -webkit-box-orient: vertical;
+    overflow: hidden; /* 넘치는 내용 숨기기 */
+    text-overflow: ellipsis; /* 말줄임표(...) 표시 */
+}

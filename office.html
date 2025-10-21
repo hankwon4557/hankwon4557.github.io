@@ -4,25 +4,61 @@
     <meta charset="UTF-8">
     <title>제주 건축사사무소 | 오피스</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/office.css">
 </head>
 <body>
     <div class="container">
         <header id="site-header"></header>
         <main>
-            <p>당신을 비추는 건축 <a href="https://naver.me/52RBHDK2" target="_blank" class="highlight">오조 건축사사무소</a> 입니다.</p>
+            <div class="office-container">
+                <!-- 상단에 프로필 이미지 추가 -->
+                <div class="profile-header">
+                    <img src="assets\image\office\office.jpg" alt="장한권 건축사" class="profile-image">
+                </div>
+                
+                <!-- 기존 섹션들 -->
+                <div class="office-section">
+                    <div class="office-label">About
+                         </div>
+                    <div class="office-content">
+                        <div class="office-item">
+                            <p>제주에 위치한 <a href="https://naver.me/52RBHDK2" target="_blank">오조 건축사사무소</a>는 <p>아름다운 사람들이 아름다운 곳에 머물길 바라면서 공간을 설계하고 있습니다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="office-section">
+                    <div class="office-label">Profile</div>
+                    <div class="office-content">
+                        <div class="office-item">
+                            <p>장한권 대한민국 건축사 (KIRA)<br>동아대학교 건축학과<br>제주건축사회 연구위원회 연구위원</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="office-section">
+                    <div class="office-label">Alumni</div>
+                    <div class="office-content">
+                        <div class="office-item">
+                            <p>강보성 (2025-인턴)<br>권보람 (2023-2025)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
         <footer id="site-footer"></footer>
     </div>
+    
     <script>
         // 헤더 불러오기
-        fetch('header.html')
+        fetch('components/header.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('site-header').innerHTML = data;
             });
         // 푸터 불러오기
-        fetch('footer.html')
+        fetch('components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('site-footer').innerHTML = data;

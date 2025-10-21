@@ -1,33 +1,159 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>제주 건축사사무소 | 뉴스</title>
+    <title>뉴스 | 오조 건축사사무소</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/news.css">
 </head>
+
 <body>
     <div class="container">
+        <!-- 헤더: header.html에서 불러옴 -->
         <header id="site-header"></header>
         <main>
-            <h2>News</h2>
-            <p>최근 소식이 여기에 표시됩니다.</p>
+            <!-- 뉴스 전체 컨테이너 (연한 파랑) -->
+            <div class="news-container">
+                <!-- 뉴스 카드 목록 섹션 (연한 노랑) -->
+                <section class="news-list" id="news-container">
+                    <!-- 뉴스 카드들이 여기에 자동으로 추가됩니다 -->
+                </section>
+
+                <!-- 로딩 인디케이터 -->
+                <div class="loading" id="loading"> </div>
+                
+                <!-- 더 이상 불러올 뉴스가 없을 때 표시 -->
+                <div class="no-more hidden" id="no-more">  </div>
+            </div>
         </main>
+        <!-- 푸터: footer.html에서 불러옴 -->
         <footer id="site-footer"></footer>
     </div>
+
     <script>
-        // 헤더 불러오기
-        fetch('header.html')
+        // 실제 뉴스 데이터
+        const newsData = [
+            {
+                date: "2025.08",
+                title: "제주 청소년 나무학교 '나무의집' 튜터 활동",
+                content: "청소년 나무학교의 튜터를 맡았습니다. 2박 3일간의 나무학교를 통해 도내 고등학생과 만나 건축, 나무, 공간에 대한 이야기를 나누고 작은 프로젝트도 함께 하였습니다.",
+                image: "assets/image/news/2025.08.jpg", // 폴더 구조에 맞춘 경로
+                url: "https://blog.naver.com/ojo_architects/224042270370"
+            },
+            {
+                date: "2025.07", 
+                title: "2025.07 Vol.81 제주 건축사회 건축저널 기고 ",
+                content: "제주의 주택장식 삼도1동의 파라펫 아카이브 오조는 꾸준하게 장식에 대해서 이야기 하고 있습니다.<br>내년에도 장식 파트2로 찾아뵙겠습니다. ",
+                image: "assets/image/news/2025.07.jpg", // 폴더 구조에 맞춘 경로
+                url: "#"
+            },
+            {
+                date: "2024.09",
+                title: "제주 건축사회 연구위원회 위원 위촉",
+                content: "25년부터 제주 건축사회 건축 연구위원회의 위원으로 활동하게 되었습니다.<br>제주 근대건축물과 장식에 대해 탐구할 예정입니다.<br>두근두근",
+                image: "assets/image/news/2024.07.jpg", // 폴더 구조에 맞춘 경로
+                url: "https://blog.naver.com/ojo_architects/223510416225"
+            },
+            {
+                date: "2024.07",
+                title: "제주 건축 3040 워킹그룹 중간발표",
+                content: "제주 3040 워킹그룹의 중간발표가 있었습니다. 교통분야를 분석하였고 그중 가로수에 대한 탐구를 이어갔습니다.<br>자세한 내용은 블로그에서... ",
+                image: "assets/image/news/2024.09.jpg", // 폴더 구조에 맞춘 경로
+                url: "https://blog.naver.com/ojo_architects/223819110733"
+            },
+            {
+                date: "2022.10",
+                title: "오조 건축사사무소 확장 이전",
+                content: "동쪽 가장 끝에 위치했던 오조 건축사사무소가 제주시로 이전했습니다.",
+                image: "assets/image/news/2022.10.jpg", // 폴더 구조에 맞춘 경로
+                url: "https://blog.naver.com/ojo_architects/222897638176"
+            }
+        ];
+        
+        // 무한 스크롤 변수 - 성능 최적화
+        const itemsPerPage = 5; // 10개 → 5개로 줄임
+        let currentIndex = 0;
+        let isLoading = false;
+        const totalItems = Math.min(newsData.length, 20); // 최대 20개로 제한
+
+        // 뉴스 카드 생성 함수 (처음 로드)
+        function loadInitialNews() {
+            const container = document.getElementById('news-container');
+            container.innerHTML = ''; // 기존 내용 초기화
+            currentIndex = 0;
+            loadMoreNews();
+        }
+
+        // 더 많은 뉴스 로드 함수
+        function loadMoreNews() {
+            if (isLoading || currentIndex >= totalItems) return;
+            
+            isLoading = true;
+
+            // 로딩 시뮬레이션 시간 단축
+            setTimeout(() => {
+                const container = document.getElementById('news-container');
+                const end = Math.min(currentIndex + itemsPerPage, totalItems);
+                
+                for (let i = currentIndex; i < end; i++) {
+                    const news = newsData[i];
+                    const newsCard = `
+                        <a href="${news.url}" class="news-post" target="_blank">
+                            <img class="news-thumb" src="${news.image}" alt="${news.title}">
+                            <div class="news-info">
+                                <div class="news-meta">${news.date}</div>
+                                <div class="news-headline">${news.title}</div>
+                                <div class="news-content">${news.content}</div>
+                            </div>
+                        </a>
+                    `;
+                    container.innerHTML += newsCard;
+                }
+                
+                currentIndex = end;
+                isLoading = false;
+
+                // 모든 뉴스를 로드했는지 확인
+                if (currentIndex >= totalItems) {
+                    document.getElementById('no-more').classList.remove('hidden');
+                }
+            }, 200); // 0.5초 → 0.2초로 단축
+        }
+
+        // 스크롤 이벤트 리스너
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+
+            // 페이지 하단에서 200px 전에 도달하면 더 로드
+            if (scrollTop + windowHeight >= documentHeight - 200) {
+                loadMoreNews();
+            }
+        }
+
+        // 헤더 불러오기 (폴더 구조에 맞춘 경로)
+        fetch('components/header.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('site-header').innerHTML = data;
             });
-        // 푸터 불러오기
-        fetch('footer.html')
+            
+        // 푸터 불러오기 (폴더 구조에 맞춘 경로)
+        fetch('components/footer.html')
             .then(res => res.text())
             .then(data => {
                 document.getElementById('site-footer').innerHTML = data;
             });
+        
+        // 페이지 로드 시 초기 뉴스 로드 및 스크롤 이벤트 등록
+        window.addEventListener('load', () => {
+            loadInitialNews();
+            window.addEventListener('scroll', handleScroll);
+        });
     </script>
 </body>
+
 </html>
