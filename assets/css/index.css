@@ -43,11 +43,12 @@
 /* 프로젝트 페이지 반응형 */
 @media (max-width: 768px) {
     .project-gallery {
-        gap: 20px; /* 갤러리 아이템 간격 조정 */
-        justify-content: space-between; /* 갤러리 아이템 간격 조정 */
+        gap: 12px; /* 기존 20px -> 12px로 축소 */
+        justify-content: space-between;
     }
     
     .project-item {
-        flex-basis: calc(50% - 10px); /* 모바일에서 아이템 너비 조정 */
+        /* 두 칼럼일 때 gap/2 만큼 빼줘야 정확히 들어맞음 */
+        flex-basis: calc(50% - 6px); /* 기존 calc(50% - 10px) -> gap(12px)/2 = 6px 적용 */
     }
 }
