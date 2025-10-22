@@ -52,11 +52,11 @@
     line-height: 2;
     margin: 0;
 
-    /* 공격적 분할을 유지하고 싶지 않은 경우 개별 단어는 nowrap 처리 */
-    word-break: break-all;
-    overflow-wrap: anywhere;
-    word-wrap: break-word;
-    hyphens: none;
+    /* 단어 단위 줄바꿈(한글은 단어 경계 우선) */
+    white-space: normal;
+    word-break: keep-all;      /* 한글 단어를 분할하지 않음 */
+    overflow-wrap: break-word; /* 매우 긴 단어만 필요할 때 분할 허용 */
+    hyphens: auto;             /* 영어 하이픈 처리(선택) */
 }
 
 /* 특정 구문을 통째로 다음줄로 넘기기 */
