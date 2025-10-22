@@ -11,7 +11,7 @@
 /* 오피스 섹션 기본 레이아웃 */
 .office-section {
     display: flex; /* 2단 구성을 위한 flex */
-    margin-bottom: 30px; /* 섹션 간 간격 */
+    margin-bottom: 20px; /* 섹션 간 간격 */
     border-bottom: 1px solid #eee; /* 구분선 */
     padding-bottom: 60px; /* 구분선과 내용 간격 */
     align-items: baseline; /* 라벨과 내용 하단 정렬 */
@@ -23,22 +23,23 @@
 
 /* 왼쪽 라벨 영역 */
 .office-label {
-    flex: 0 0 120px; /* 고정 너비 120px */
-    font-size: 16px; /* 폰트 크기 */
+    flex: 0 0 90px; /* 고정 너비 120px */
+    font-size: 15px; /* 폰트 크기 */
     font-weight: bold; /* 두껍게 */
     color: #333; /* 색상 */
     text-align: right; /* 오른쪽 정렬 */
-    padding-right: 30px; /* 오른쪽 여백 */
+    padding-right: 20px; /* 오른쪽 여백 */
 }
 
 /* 오른쪽 내용 영역 */
 .office-content {
     flex: 1; /* 남은 공간 모두 차지 */
+    padding-right: 20px;
 }
 
 /* 오피스 아이템 */
 .office-item {
-    margin-bottom: 20px; /* 아이템 간 간격 */
+    margin-bottom: 30px; /* 아이템 간 간격 */
 }
 
 .office-item:last-child {
@@ -46,10 +47,21 @@
 }
 
 .office-item p {
-    font-size: 15px; /* 본문 크기 */
-    color: #666; /* 색상 */
-    line-height: 2; /* 줄간격 */
-    margin: 0; /* 기본 여백 제거 */
+    font-size: 14px;
+    color: #666;
+    line-height: 2;
+    margin: 0;
+
+    /* 공격적 분할을 유지하고 싶지 않은 경우 개별 단어는 nowrap 처리 */
+    word-break: break-all;
+    overflow-wrap: anywhere;
+    word-wrap: break-word;
+    hyphens: none;
+}
+
+/* 특정 구문을 통째로 다음줄로 넘기기 */
+.no-break {
+    white-space: nowrap;
 }
 
 /* 상단 프로필 이미지 */

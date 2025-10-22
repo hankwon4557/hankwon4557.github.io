@@ -49,6 +49,5 @@
     
     .project-item {
         flex-basis: calc(50% - 10px); /* 모바일에서 아이템 너비 조정 */
-        aspect-ratio: 1; /* 모바일에서도 정사각형 유지 */
     }
 }
