@@ -6,11 +6,14 @@
 .project-gallery {
     display: flex; /* 갤러리 가로 배치 */
     flex-wrap: wrap; /* 줄 바꿈 허용 */
-    gap: 2vw; /* 갤러리 아이템 간격 */
+    gap: var(--project-gap); /* 고정값 사용 */
+    box-sizing: border-box;
+    justify-content: flex-start; /* space-between 제거 */
 }
 
 .project-item {
-    flex-basis: calc((100% - 4vw) / 3); /* 아이템 너비 계산 */
+    box-sizing: border-box;
+    flex: 0 0 calc((100% - (2 * var(--project-gap))) / 3); /* desktop: 3열 */
     aspect-ratio: 1; /* 정사각형 비율 강제 */
     display: flex; /* flexbox 적용 */
     flex-direction: column; /* 세로 배치 */
@@ -40,15 +43,20 @@
     font-weight: normal; /* 기본 두께 */
 }
 
+/* 안정적 간격 변수 추가 */
+:root{
+  --project-gap: 12px;
+}
+
 /* 프로젝트 페이지 반응형 */
 @media (max-width: 768px) {
     .project-gallery {
-        gap: 12px; /* 기존 20px -> 12px로 축소 */
-        justify-content: space-between;
+        gap: var(--project-gap);
+        justify-content: flex-start; /* 반드시 flex-start 유지 */
     }
-    
+
+    /* 2열 계산: 각 아이템 너비 = (100% - gap) / 2 */
     .project-item {
-        /* 두 칼럼일 때 gap/2 만큼 빼줘야 정확히 들어맞음 */
-        flex-basis: calc(50% - 6px); /* 기존 calc(50% - 10px) -> gap(12px)/2 = 6px 적용 */
+        flex: 0 0 calc((100% - var(--project-gap)) / 2);
     }
 }
