@@ -48,9 +48,10 @@ html, body {
 }
 
 .project-item img {
-    width: 100%; /* 이미지 너비 100% */
-    flex: 1; /* 이미지가 남은 공간 차지 */
-    object-fit: cover; /* 이미지 비율 유지하며 영역 채우기 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* 인라인 이미지 하단 여백 방지 */
 }
 
 /* 프로젝트 제목 스타일 */
