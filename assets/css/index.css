@@ -2,21 +2,41 @@
    프로젝트 페이지 스타일 (Project Page Styles)
    ======================================== */
 
+/* 전역 리셋: body 기본 여백 제거 및 박스 사이징 통일 */
+html, body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  /* 필요시 overflow-x:hidden으로 오른쪽 스페이스를 숨김 */
+  overflow-x: hidden;
+}
+*, *::before, *::after { box-sizing: inherit; }
+
+/* 안정적 간격 변수 (상단에 선언) */
+:root {
+    --project-gap: 12px;
+}
+
 /* 프로젝트 갤러리 스타일 */
 .project-gallery {
-    display: flex; /* 갤러리 가로 배치 */
-    flex-wrap: wrap; /* 줄 바꿈 허용 */
-    gap: var(--project-gap); /* 고정값 사용 */
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--project-gap);
     box-sizing: border-box;
-    justify-content: flex-start; /* space-between 제거 */
+    justify-content: flex-start;
+    width: 100%;            /* 명시적으로 컨테이너 너비 고정 */
+    margin: 0;              /* 혹시 인라인 여백이 있으면 제거 */
+    padding: 0;             /* 컨테이너 패딩이 너비 계산에 영향을 주지 않도록 기본 제거 */
+    overflow-x: visible;    /* overflow-x:hidden은 위에서 이미 처리했으므로 기본은 visible */
 }
 
 .project-item {
     box-sizing: border-box;
-    flex: 0 0 calc((100% - (2 * var(--project-gap))) / 3); /* desktop: 3열 */
-    aspect-ratio: 1; /* 정사각형 비율 강제 */
-    display: flex; /* flexbox 적용 */
-    flex-direction: column; /* 세로 배치 */
+    flex: 0 0 calc((100% - (2 * var(--project-gap))) / 3);
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-item a {
@@ -41,11 +61,6 @@
     margin-top: 10px; /* 이미지와 제목 간격 */
     margin-bottom: 0; /* 기본 여백 제거 */
     font-weight: normal; /* 기본 두께 */
-}
-
-/* 안정적 간격 변수 추가 */
-:root{
-  --project-gap: 12px;
 }
 
 /* 프로젝트 페이지 반응형 */
