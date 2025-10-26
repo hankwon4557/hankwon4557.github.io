@@ -91,6 +91,22 @@
     text-underline-offset: 2px; /* 글자와 밑줄 간격 (조정 가능) */
 }
 
+/* Contact 본문 안 링크: 본문과 동일한 크기/색 + 밑줄만 */
+.office-item p a {
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.office-item p a:hover,
+.office-item p a:focus {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* 오피스 페이지 반응형 */
 @media (max-width: 468px) {
     .office-container {
