@@ -62,6 +62,10 @@ html, body {
     margin-top: 10px; /* 이미지와 제목 간격 */
     margin-bottom: 0; /* 기본 여백 제거 */
     font-weight: normal; /* 기본 두께 */
+    /* 한 줄 고정 처리 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* 프로젝트 페이지 반응형 */
@@ -74,5 +78,11 @@ html, body {
     /* 2열 계산: 각 아이템 너비 = (100% - gap) / 2 */
     .project-item {
         flex: 0 0 calc((100% - var(--project-gap)) / 2);
+    }
+
+    /* 모바일에서 제목 글자 크기 축소 (선택사항) */
+    .project-title {
+        font-size: 12px;
+        margin-top: 8px;
     }
 }
