@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>제주 건축사사무소 | 서귀포시 표선면 표선초등학교 증축공사</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+</head>
+<body>
+    <div class="container">
+        <header id="site-header"></header>
+        <main>
+            <div class="project-detail">
+                <div class="project-images">
+                    <img src="image/1.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/2.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/3.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/4.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/5.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/6.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/7.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/8.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/9.webp"  alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/10.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/11.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/12.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/13.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/14.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/15.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/16.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                    <img src="image/17.webp" alt="pyoseon school" class="project-thumb" loading="lazy">
+                </div>
+
+                <div class="project-info">
+                    <h2>서귀포시 표선초등학교 증축공사</h2>
+                    <p>대지위치 : 서귀포시 표선면 표선리 456<br>건물용도 : 교육연구시설<br>대지면적 : 16,769m2<br>건축면적 : 482.66m2<br>바닥면적 : 961.05m2<br>작업연도 : 2025</p>
+                </div>
+            </div>
+        </main>
+        <footer id="site-footer"></footer>
+    </div>
+
+    <script>
+      // header/footer 로드
+      fetch('../../components/header.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('site-header').innerHTML = html; });
+
+      fetch('../../components/footer.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('site-footer').innerHTML = html; });
+    </script>
+</body>
+</html>
