@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>제주 건축사사무소 | 서귀포시 안덕면 서광리 산보롬</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="../../assets/css/project.css">
+</head>
+<body>
+    <div class="container">
+        <header id="site-header"></header>
+        <main>
+            <div class="project-detail">
+                <div class="project-images">
+                    <img src="image/1.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/2.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/3.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/4.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/5.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/6.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/7.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/8.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/9.webp"  alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/10.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/11.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/12.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/13.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/14.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/15.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/16.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/17.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/18.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/19.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                    <img src="image/20.webp" alt="sanborom" class="project-thumb" loading="lazy">
+                </div>
+
+                <div class="project-info">
+                    <h2>서귀포시 안덕면 서광리 산보롬</h2>
+                    <p>대지위치 : 서귀포시 안덕면 서광리<br>건물용도 : 독채민박<br>대지면적 : 2,675m2<br>건축면적 : 278.90m2<br>바닥면적 : 227.08m2<br>작업연도 : 2025</p>
+                </div>
+            </div>
+        </main>
+        <footer id="site-footer"></footer>
+    </div>
+
+    <script>
+      // header/footer 로드
+      fetch('../../components/header.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('site-header').innerHTML = html; });
+
+      fetch('../../components/footer.html')
+        .then(res => res.text())
+        .then(html => { document.getElementById('site-footer').innerHTML = html; });
+    </script>
+</body>
+</html>
